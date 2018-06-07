@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Statistics</string>
+    <string name="ST_FINANCE">Finance</string>
+    <string name="ST_ASSET">Asset</string>
+    <string name="ST_EXPENSE">Expense</string>
+    <string name="ST_INVEST">Invest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
+
