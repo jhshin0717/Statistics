@@ -1,6 +1,7 @@
 package com.wideps.android.statistics.finance
 
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import com.wideps.android.statistics.R
 import kotlinx.android.synthetic.main.activity_finance.*
@@ -11,11 +12,14 @@ class FinanceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finance)
 
-        viewPager.adapter = PageAdapter(supportFragmentManager).apply {
-            addFragment(AssetFragment())
-            addFragment(ExpenseFragment())
-            addFragment(InvestFragment())
-
+        viewPager.apply {
+            adapter = PageAdapter(supportFragmentManager).apply {
+                addFragment(AssetFragment())
+                addFragment(ExpenseFragment())
+                addFragment(InvestFragment())
+            }
+            addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         }
+
     }
 }
