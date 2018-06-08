@@ -11,15 +11,11 @@ class FinanceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finance)
 
-        val pageAdapter = PageAdapter(supportFragmentManager)
-        linkedMapOf(
-                R.string.ST_ASSET to AssetFragment(),
-                R.string.ST_EXPENSE to ExpenseFragment(),
-                R.string.ST_INVEST to InvestFragment()
-        ).forEach { id, fragment ->
-            pageAdapter.addFragment(fragment)
-            tabLayout.addTab(tabLayout.newTab(), id)
+        viewPager.adapter = PageAdapter(supportFragmentManager).apply {
+            addFragment(AssetFragment())
+            addFragment(ExpenseFragment())
+            addFragment(InvestFragment())
+
         }
-        viewPager.adapter = pageAdapter
     }
 }
