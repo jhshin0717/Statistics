@@ -4,8 +4,19 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
-class PageAdapter(fm: FragmentManager, private val fragments: List<Fragment>) : FragmentPagerAdapter(fm) {
-    override fun getItem(position: Int) = fragments[position]
+class PageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
-    override fun getCount() = fragments.size
+    private val fragments = ArrayList<Fragment>()
+
+    override fun getItem(position: Int): Fragment {
+        return fragments.get(position)
+    }
+
+    override fun getCount(): Int {
+        return fragments.size
+    }
+
+    public fun addFragment(fragment: Fragment) {
+        fragments.add(fragment)
+    }
 }
