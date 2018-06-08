@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.wideps.android.statistics.R
 
 public class InvestFragment: Fragment() {
 
@@ -18,7 +19,7 @@ public class InvestFragment: Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.fragment_invest, null)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
